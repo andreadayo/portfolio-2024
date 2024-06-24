@@ -80,12 +80,21 @@
   --gray: #686868;
   --white: #d6d6d6;
 
+  --glass-bg: linear-gradient(
+      116deg,
+      rgba(56, 56, 56, 0.17) -29.94%,
+      rgba(165, 165, 165, 0.13) -29.93%,
+      rgba(124, 124, 124, 0.08) 101.76%
+    )
+    blur(100px);
+
   --h1: 60px;
-  --h2: 36px;
-  --h3: 28px;
-  --h4: 24px;
-  --h5: 20px;
-  --h6: 18px;
+  --h2: 54px;
+  --h3: 36px;
+  --h4: 28px;
+  --h5: 24px;
+  --h6: 20px;
+  --large: 18px;
   --normal: 16px;
 }
 
@@ -99,7 +108,10 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: var(--black);
   font-family: "Atyp Display Regular", sans-serif;
+  color: var(--white);
+  font-size: var(--normal);
 }
 
 a {

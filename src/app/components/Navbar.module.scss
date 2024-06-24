@@ -1,0 +1,42 @@
+.nav {
+  z-index: 999;
+  display: flex;
+  gap: 10px;
+
+  margin: 20px auto 0;
+  padding: 16px 24px;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 64px;
+  background: linear-gradient(
+    116deg,
+    rgba(56, 56, 56, 0.17) -29.94%,
+    rgba(165, 165, 165, 0.13) -29.93%,
+    rgba(124, 124, 124, 0.08) 101.76%
+  );
+  backdrop-filter: blur(50px);
+  text-align: center;
+  transition: all 0.5s;
+
+  .link {
+    z-index: 5;
+    padding: 16px 24px;
+    border-radius: 64px;
+    text-align: center;
+  }
+
+  .active {
+    background: linear-gradient(
+      116deg,
+      rgba(56, 56, 56, 0.17) -29.94%,
+      rgba(165, 165, 165, 0.13) -29.93%,
+      rgba(124, 124, 124, 0.08) 101.76%
+    );
+    backdrop-filter: blur(50px);
+  }
+}
+
+.nav-bar--hidden {
+  transform: translateY(-150%) translateX(-50%);
+}
