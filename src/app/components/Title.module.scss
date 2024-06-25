@@ -1,0 +1,19 @@
+.title {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+
+  .line {
+    width: 68px;
+    height: 16px;
+    border-radius: 100px;
+    background: linear-gradient(90deg, #d6d6d6 0%, #111414 100%);
+  }
+
+  .text {
+    color: var(--white);
+    font-size: var(--h5);
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+}

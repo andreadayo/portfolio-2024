@@ -1,0 +1,45 @@
+.box {
+  padding: 0 35px;
+  width: 375px;
+  height: 312px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: linear-gradient(
+    116deg,
+    rgba(56, 56, 56, 0.17) -29.94%,
+    rgba(165, 165, 165, 0.13) -29.93%,
+    rgba(124, 124, 124, 0.08) 101.76%
+  );
+  backdrop-filter: blur(50px);
+
+  .circle {
+    width: 82px;
+    height: 82px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: linear-gradient(
+      116deg,
+      rgba(56, 56, 56, 0.17) -29.94%,
+      rgba(165, 165, 165, 0.13) -29.93%,
+      rgba(124, 124, 124, 0.08) 101.76%
+    );
+    backdrop-filter: blur(50px);
+  }
+
+  .title {
+    margin-top: 32px;
+    font-family: "Monument Extended Regular", sans-serif;
+    font-size: var(--h5);
+    font-weight: 400;
+  }
+
+  .description {
+    margin-top: 16px;
+  }
+}

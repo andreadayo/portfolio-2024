@@ -80,14 +80,6 @@
   --gray: #686868;
   --white: #d6d6d6;
 
-  --glass-bg: linear-gradient(
-      116deg,
-      rgba(56, 56, 56, 0.17) -29.94%,
-      rgba(165, 165, 165, 0.13) -29.93%,
-      rgba(124, 124, 124, 0.08) 101.76%
-    )
-    blur(100px);
-
   --h1: 60px;
   --h2: 54px;
   --h3: 36px;
@@ -114,7 +106,22 @@ body {
   font-size: var(--normal);
 }
 
+h1 {
+  font-family: "Monument Extended Regular", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+}
+
+p {
+  letter-spacing: 0.8px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a,
+button {
+  cursor: pointer;
 }

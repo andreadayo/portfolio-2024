@@ -1,0 +1,91 @@
+.work {
+  margin-top: -1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 36px 100px;
+  border-top: 1px solid var(--white);
+  border-bottom: 1px solid var(--white);
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .name {
+      font-size: var(--h2);
+      text-transform: uppercase;
+    }
+    .type {
+      font-size: var(--h5);
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .tech {
+      padding: 16px 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 64px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: linear-gradient(
+        116deg,
+        rgba(56, 56, 56, 0.17) -29.94%,
+        rgba(165, 165, 165, 0.13) -29.93%,
+        rgba(124, 124, 124, 0.08) 101.76%
+      );
+      backdrop-filter: blur(50px);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .button {
+      padding: 16px 24px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--white);
+      border-radius: 64px;
+      background: var(--white);
+      color: var(--black);
+      font-family: "Atyp Display Medium", sans-serif;
+      font-size: var(--normal);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      position: relative;
+      overflow: hidden;
+      transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
+      white-space: nowrap;
+    }
+
+    .button span {
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .button:hover span {
+      opacity: 0;
+    }
+
+    .button:before {
+      content: "🡢";
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      white-space: nowrap;
+    }
+
+    .button:hover:before {
+      content: "View 🡢";
+      opacity: 1;
+    }
+
+    .button:hover {
+      padding: 16px 45px;
+    }
+  }
+}
