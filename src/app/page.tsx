@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -55,17 +53,17 @@ export default function Home() {
         <div className={styles.about}>
           <Title>About Me</Title>
           <p className={styles.description}>
-            Hey there! I'm Dhea, a passionate front-end developer and designer
+            Hey there! I’m Dhea, a passionate front-end developer and designer
             based in Manila, with an eye for detail and a love for crafting
             seamless digital experiences. I have always been driven to create
             innovative designs and translate them into clean and responsive
             code. <br />
             <br />
-            As a self-taught developer, I'm always expanding my skills and
+            As a self-taught developer, I’m always expanding my skills and
             staying up-to-date with the latest technologies. I actively seek
             opportunities to learn from others. If you have an exciting project
-            in mind or wish to collaborate, don't hesitate to get in touch.
-            Together, let's create digital experiences that make a difference.
+            in mind or wish to collaborate, don’t hesitate to get in touch.
+            Together, let’s create digital experiences that make a difference.
           </p>
         </div>
 
@@ -101,6 +99,8 @@ export default function Home() {
             <Featured />
           </div>
         </div>
+
+        {/* Contact */}
         <Contact />
       </main>
     </>
