@@ -1,0 +1,72 @@
+.project {
+  position: relative;
+  height: 360px;
+  background: linear-gradient(180deg, #1c1c1c 0%, #224f4f 55.5%, #298f8f 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+
+  .top {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+
+    .title {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      h1 {
+        font-size: var(--h6);
+        font-family: "Monument Extended Regular", sans-serif;
+        letter-spacing: 1px;
+      }
+
+      p {
+        font-size: var(--small);
+        font-weight: 400;
+      }
+    }
+
+    .button {
+      flex-grow: 1;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--white);
+      border-radius: 64px;
+      background: var(--white);
+      color: var(--black);
+    }
+  }
+
+  .mockup {
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    top: 135px;
+    transition: ease-in 0.3s;
+
+    .img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 8px;
+      filter: drop-shadow(-10px -2px 24px rgba(0, 0, 0, 0.3));
+    }
+  }
+
+  &:hover {
+    .mockup {
+      top: 125px;
+      transition: ease-in 0.3s;
+    }
+  }
+}

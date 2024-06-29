@@ -1,0 +1,72 @@
+.works {
+  .header {
+    padding: 220px 0 150px 0;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-size: var(--h2);
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  .container {
+    padding: 0 100px 120px 100px;
+
+    .tabs {
+      display: flex;
+      gap: 16px;
+
+      .tab {
+        width: 270px;
+        height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        font-size: var(--h6);
+        font-family: "Monument Extended Regular", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: ease-in 0.3s;
+        cursor: pointer;
+      }
+
+      .active {
+        background-color: var(--dark-gray);
+      }
+
+      .inactive {
+        background: var(--dark-gray);
+        color: var(--gray);
+        opacity: 50%;
+
+        &:hover {
+          color: var(--white);
+        }
+      }
+    }
+
+    .content {
+      display: flex;
+      width: 100%;
+      padding: 52px;
+      border-bottom-left-radius: 16px;
+      border-top-right-radius: 16px;
+      border-bottom-right-radius: 16px;
+      background-color: var(--dark-gray);
+
+      .projects {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+      }
+    }
+  }
+}

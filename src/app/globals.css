@@ -77,6 +77,7 @@
 
 :root {
   --black: #111414;
+  --dark-gray: #242626;
   --gray: #686868;
   --white: #d6d6d6;
 
@@ -88,6 +89,7 @@
   --h6: 20px;
   --large: 18px;
   --normal: 16px;
+  --small: 14px;
 }
 
 * {

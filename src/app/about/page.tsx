@@ -63,7 +63,7 @@ export default function About() {
                 UI/UX design, front-end development, and project management.
               </p>
               <p>
-                In addition to my role at TomasinoWeb, I occasionally take on
+                In addition to my role at TomasinoWeb, I occasionally take on{" "}
                 <b>freelance UI/UX design</b> projects on Fiverr, where I’ve had
                 the pleasure of designing blog sites and landing pages for
                 clients.
