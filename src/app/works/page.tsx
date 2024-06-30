@@ -2,16 +2,28 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import Project from "../components/Project";
-import Contact from "../components/Contact";
+import Link from "next/image";
+import { useRouter } from "next/navigation";
+import Project from "@/app/components/Project";
+import Contact from "@/app/components/Contact";
 import styles from "./works.module.scss";
+import { projects as projectData } from "../../../public/data/projects";
 
-export default function About() {
+export default function Works({ projectId }: { projectId: string }) {
   const [activeTab, setActiveTab] = useState("Website");
 
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
+  };
+
+  const projects = [
+    { id: "project-one", title: "Project One" },
+    { id: "project-two", title: "Project Two" },
+  ];
+
+  const router = useRouter();
+  const handleClick = (projectId: string) => {
+    router.push(`/works/${projectId}`);
   };
 
   return (
@@ -51,21 +63,21 @@ export default function About() {
             {activeTab === "Website" && (
               <>
                 <div className={styles.projects}>
-                  <Project
-                    title="Project Name"
-                    description="Lorem ispum dolor sit amet"
-                    image="/assets/images/sample.png"
-                  />
-                  <Project
-                    title="Project Name"
-                    description="Lorem ispum dolor sit amet"
-                    image="/assets/images/sample.png"
-                  />
-                  <Project
-                    title="Project Name"
-                    description="Lorem ispum dolor sit amet"
-                    image="/assets/images/sample.png"
-                  />
+                  {projectData
+                    .filter((project) => project.type === "website")
+                    .map((project) => (
+                      <div
+                        key={project.id}
+                        onClick={() => handleClick(project.id)}
+                        className={styles.projectLink}
+                      >
+                        <Project
+                          title={project.title}
+                          description={project.subtitle}
+                          image={project.image}
+                        />
+                      </div>
+                    ))}
                 </div>
               </>
             )}

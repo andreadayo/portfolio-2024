@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Spline from "@splinetool/react-spline/next";
-import Title from "./components/Title";
-import Technology from "./components/Technology";
-import Featured from "./components/Featured";
-import Contact from "./components/Contact";
+import Title from "@/app/components/Title";
+import Technology from "@/app/components/Technology";
+import Featured from "@/app/components/Featured";
+import Contact from "@/app/components/Contact";
 import styles from "./page.module.scss";
 import { GoArrowRight } from "react-icons/go";
 

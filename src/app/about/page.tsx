@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Title from "../components/Title";
-import Contact from "../components/Contact";
+import Title from "@/app/components/Title";
+import Contact from "@/app/components/Contact";
 import styles from "./about.module.scss";
 
 export default function About() {
