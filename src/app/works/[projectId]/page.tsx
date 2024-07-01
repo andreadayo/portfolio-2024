@@ -11,6 +11,7 @@ import {
 import { FaGithub, FaFigma, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import Title from "@/app/components/Title";
+import Screenshots from "@/app/components/Screenshots";
 import Contact from "@/app/components/Contact";
 import styles from "./project.module.scss";
 
@@ -133,38 +134,10 @@ const ProjectPage: React.FC = () => {
               ))}
             </div>
           </div>
-          <div className={styles.screenshots}>
-            <Title>Screenshots</Title>
-            <div className={styles.container}>
-              <div className={styles.item}>
-                <Image
-                  src="/assets/images/sample2.jpg"
-                  width={600}
-                  height={600}
-                  alt={project.title}
-                  className={styles.img}
-                />
-              </div>
-              <div className={styles.item}>
-                <Image
-                  src="/assets/images/sample2.jpg"
-                  width={600}
-                  height={600}
-                  alt={project.title}
-                  className={styles.img}
-                />
-              </div>
-              <div className={styles.item}>
-                <Image
-                  src="/assets/images/sample2.jpg"
-                  width={600}
-                  height={600}
-                  alt={project.title}
-                  className={styles.img}
-                />
-              </div>
-            </div>
-          </div>
+
+          {/* Screenshots */}
+          <Screenshots projectId={project.id} />
+
           <div className={styles.buttons}>
             <Link href="#">
               <button className={styles.button}>
