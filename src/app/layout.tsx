@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Navbar from "@/app/components/Navbar";
+import MomentumScroll from "@/app/components/MomentumScroll";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,7 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar /> {children}
+        <Navbar />
+        <MomentumScroll>{children}</MomentumScroll>
       </body>
     </html>
   );

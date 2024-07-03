@@ -1,7 +1,59 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import styles from "./Navbar.module.scss";
+
+interface Position {
+  left: number;
+  width: number;
+  opacity: number;
+}
+
+interface CursorProps {
+  position: Position;
+}
+
+interface TabProps {
+  children: React.ReactNode;
+  setPosition: (position: Position) => void;
+  isActive: boolean;
+  href: string;
+}
+
+const Cursor: React.FC<CursorProps> = ({ position }) => {
+  return <motion.li animate={position} className={styles.cursor} />;
+};
+
+const Tab: React.FC<TabProps> = ({ children, setPosition, isActive, href }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  return (
+    <div
+      className={`${styles.link} ${isActive ? styles.active : ""}`}
+      ref={ref}
+      onMouseEnter={() => {
+        if (!ref.current) return;
+
+        const { width } = ref.current.getBoundingClientRect();
+
+        setPosition({
+          width,
+          opacity: 0.5,
+          left: ref.current.offsetLeft,
+        });
+      }}
+      onClick={() => {
+        router.push(href);
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
 const useScroll = () => {
   const [data, setData] = useState({
@@ -31,12 +83,20 @@ const useScroll = () => {
   return data;
 };
 
+const tabsData = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Works", path: "/works" },
+  { name: "Contact", path: "/contact" },
+];
+
 const Navbar: React.FC = () => {
-  const [navClassList, setNavClassList] = useState<string[]>([]); // Explicitly define initial state as string[]
+  const pathname = usePathname();
+
+  const [navClassList, setNavClassList] = useState<string[]>([]);
 
   const scroll = useScroll();
 
-  // update classList of nav on scroll
   useEffect(() => {
     const _classList: string[] = [];
 
@@ -47,12 +107,35 @@ const Navbar: React.FC = () => {
     setNavClassList(_classList);
   }, [scroll.y, scroll.lastY]);
 
+  const [position, setPosition] = useState({
+    left: 0,
+    width: 0,
+    opacity: 0,
+  });
+
   return (
     <nav className={`${styles.nav} ${navClassList.join(" ")}`}>
-      <div className={`${styles.link} ${styles.active}`}>Home</div>
-      <div className={styles.link}>About</div>
-      <div className={styles.link}>Works</div>
-      <div className={styles.link}>Contact</div>
+      <div
+        className={styles.container}
+        onMouseLeave={() => {
+          setPosition((pv) => ({
+            ...pv,
+            opacity: 0,
+          }));
+        }}
+      >
+        {tabsData.map((tab) => (
+          <Tab
+            key={tab.path}
+            setPosition={setPosition}
+            isActive={pathname === tab.path}
+            href={tab.path}
+          >
+            {tab.name}
+          </Tab>
+        ))}
+        <Cursor position={position} />
+      </div>
     </nav>
   );
 };

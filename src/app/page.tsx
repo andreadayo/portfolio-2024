@@ -5,9 +5,13 @@ import Spline from "@splinetool/react-spline/next";
 import Title from "@/app/components/Title";
 import Technology from "@/app/components/Technology";
 import Featured from "@/app/components/Featured";
+import Paragraph from "@/app/components/Paragraph";
 import Contact from "@/app/components/Contact";
 import styles from "./page.module.scss";
 import { GoArrowRight } from "react-icons/go";
+
+const paragraph =
+  "Hey there! I’m Andrea, a passionate front-end developer and designer based in Manila, with an eye for detail and a love for crafting seamless digital experiences. I have always been driven to create innovative designs and translate them into clean and responsive code. As a self-taught developer, I’m always expanding my skills and staying up-to-date with the latest technologies. I actively seek opportunities to learn from others. If you have an exciting project in mind or wish to collaborate, don’t hesitate to get in touch. Together, let’s create digital experiences that make a difference.";
 
 export default function Home() {
   return (
@@ -52,19 +56,9 @@ export default function Home() {
         {/* About Me */}
         <div className={styles.about}>
           <Title>About Me</Title>
-          <p className={styles.description}>
-            Hey there! I’m Dhea, a passionate front-end developer and designer
-            based in Manila, with an eye for detail and a love for crafting
-            seamless digital experiences. I have always been driven to create
-            innovative designs and translate them into clean and responsive
-            code. <br />
-            <br />
-            As a self-taught developer, I’m always expanding my skills and
-            staying up-to-date with the latest technologies. I actively seek
-            opportunities to learn from others. If you have an exciting project
-            in mind or wish to collaborate, don’t hesitate to get in touch.
-            Together, let’s create digital experiences that make a difference.
-          </p>
+          <div className={styles.description}>
+            <Paragraph paragraph={paragraph} />
+          </div>
         </div>
 
         {/* Technologies */}
@@ -75,7 +69,7 @@ export default function Home() {
               Figma, Spline, Photoshop
             </Technology>
             <Technology image="/assets/shapes/frontend.svg" title="Front-end">
-              HTML5, CSS3 / SCSS, Tailwind CSS, JavaScript, Typescript
+              JavaScript, Typescript, Framer Motion, Tailwind CSS
             </Technology>
             <Technology image="/assets/shapes/backend.svg" title="Back-end">
               PHP, MySQL, Laravel, Java
