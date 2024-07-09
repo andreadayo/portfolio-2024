@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Title from "@/app/components/Title";
 import Contact from "@/app/components/Contact";
+import { jobsData, Company, Role } from "../../../public/data/experience";
 import styles from "./about.module.scss";
 
 export default function About() {
@@ -88,35 +89,35 @@ export default function About() {
         {/* Experience */}
         <div className={styles.experience}>
           <Title>Experience</Title>
-          <div className={styles.item}>
-            <div className={styles.title}>
-              <Image
-                className={styles.img}
-                src="/assets/shapes/star.svg"
-                width={25}
-                height={25}
-                alt="Star"
-              />
-              <span>TomasinoWeb</span>
-            </div>
-            <div className={styles.details}>
-              <div className={styles.left}>Jun 2024 – Present</div>
-              <div className={styles.right}>
-                <h1 className={styles.position}>Chief Technology Officer</h1>
-                <ul className={styles.description}>
-                  <li>
-                    In-charge of supervising the entire Web Technologies
-                    Department, overseeing project management and team
-                    coordination.
-                  </li>
-                  <li>
-                    Manage TomasinoWeb’s platforms including the main website,
-                    domain, and emails.
-                  </li>
-                </ul>
+
+          {jobsData.map((company: Company, index: number) => (
+            <div key={index} className={styles.item}>
+              <div className={styles.title}>
+                <Image
+                  className={styles.img}
+                  src="/assets/shapes/star.svg"
+                  width={25}
+                  height={25}
+                  alt="Star"
+                />
+                <span>{company.company}</span>
               </div>
+
+              {company.roles.map((role: Role, idx: number) => (
+                <div key={idx} className={styles.details}>
+                  <div className={styles.left}>{role.date}</div>
+                  <div className={styles.right}>
+                    <h1 className={styles.position}>{role.position}</h1>
+                    <ul className={styles.description}>
+                      {role.description.map((desc: string, dIdx: number) => (
+                        <li key={dIdx}>{desc}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
+          ))}
         </div>
 
         {/* Education */}

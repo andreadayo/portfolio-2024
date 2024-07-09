@@ -83,12 +83,46 @@ export default function Works({ projectId }: { projectId: string }) {
             )}
             {activeTab === "Design" && (
               <>
-                <p>Content for Design tab</p>
+                <div className={styles.projects}>
+                  {projectData
+                    .filter((project) => project.type === "design")
+                    .map((project) => (
+                      <div
+                        key={project.id}
+                        onClick={() => handleClick(project.id)}
+                        className={styles.projectLink}
+                      >
+                        <Project
+                          title={project.title}
+                          description={project.subtitle}
+                          image={project.image}
+                        />
+                      </div>
+                    ))}
+                </div>
               </>
             )}
             {activeTab === "Case Study" && (
               <>
-                <p>Content for Case Study tab</p>
+                <>
+                  <div className={styles.projects}>
+                    {projectData
+                      .filter((project) => project.type === "case study")
+                      .map((project) => (
+                        <div
+                          key={project.id}
+                          onClick={() => handleClick(project.id)}
+                          className={styles.projectLink}
+                        >
+                          <Project
+                            title={project.title}
+                            description={project.subtitle}
+                            image={project.image}
+                          />
+                        </div>
+                      ))}
+                  </div>
+                </>
               </>
             )}
           </div>

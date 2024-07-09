@@ -58,7 +58,7 @@ export const projects: Project[] = [
     type: "design",
     title: "Project Three",
     subtitle: "An innovative design concept",
-    image: "/assets/images/A.jpg",
+    image: "/assets/images/sample.png",
     github: "https://github.com",
     figma: "https://figma.com",
     link: "https://demo.com",

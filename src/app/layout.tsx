@@ -35,7 +35,7 @@ export default function RootLayout({
             mixBlendMode: "exclusion",
           }}
         />
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );

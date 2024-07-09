@@ -105,7 +105,7 @@
     padding: 0 100px 36px 100px;
 
     .item {
-      padding: 40px 0;
+      padding-top: 40px;
 
       .title {
         margin-bottom: 32px;
@@ -126,12 +126,14 @@
         display: flex;
 
         .left {
-          width: 250px;
+          width: 20%;
           color: var(--gray);
           font-size: var(--large);
         }
 
         .right {
+          width: 80%;
+
           .position {
             font-family: "Atyp Display Semibold", sans-serif;
             font-size: var(--large);
@@ -140,9 +142,19 @@
             padding-top: 16px;
             padding-left: 24px;
             letter-spacing: 0.8px;
+
+            li {
+              opacity: 0.7;
+              line-height: 1.2;
+              letter-spacing: 0.8px;
+            }
           }
         }
       }
+    }
+
+    .item:last-child {
+      padding-top: 0;
     }
   }
 
