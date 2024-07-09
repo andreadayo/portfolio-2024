@@ -1,4 +1,20 @@
+.image {
+  z-index: 99;
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 200ms ease-in-out;
+  pointer-events: none;
+}
+
 .work {
+  position: relative;
   margin-top: -1px;
   display: flex;
   justify-content: space-between;
@@ -6,8 +22,10 @@
   padding: 36px 100px;
   border-top: 1px solid var(--white);
   border-bottom: 1px solid var(--white);
+  overflow: hidden;
 
   .left {
+    z-index: 10;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -18,10 +36,12 @@
     }
     .type {
       font-size: var(--h5);
+      text-transform: capitalize;
     }
   }
 
   .right {
+    z-index: 10;
     display: flex;
     align-items: center;
     gap: 16px;
@@ -62,30 +82,22 @@
       transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
       white-space: nowrap;
     }
+  }
 
-    .button span {
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    .button:hover span {
-      opacity: 0;
-    }
-
-    .button:before {
-      content: "🡢";
-      position: absolute;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-      white-space: nowrap;
-    }
-
-    .button:hover:before {
-      content: "View 🡢";
-      opacity: 1;
-    }
-
-    .button:hover {
-      padding: 16px 45px;
-    }
+  .slide {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      270deg,
+      rgba(112, 112, 112, 0.03) 0%,
+      rgba(154, 154, 154, 0.2) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

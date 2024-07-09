@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Navbar from "@/app/components/Navbar";
 import MomentumScroll from "@/app/components/MomentumScroll";
+import AnimatedCursor from "react-animated-cursor";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,7 +20,22 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-        <MomentumScroll>{children}</MomentumScroll>
+        <AnimatedCursor
+          innerSize={8}
+          outerSize={35}
+          innerScale={1}
+          outerScale={2}
+          outerAlpha={0}
+          innerStyle={{
+            backgroundColor: "var(--white)",
+            mixBlendMode: "exclusion",
+          }}
+          outerStyle={{
+            border: "3px solid var(--white)",
+            mixBlendMode: "exclusion",
+          }}
+        />
+        {children}
       </body>
     </html>
   );
