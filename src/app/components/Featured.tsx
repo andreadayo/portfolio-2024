@@ -38,16 +38,19 @@ const Featured: React.FC<FeaturedProps> = ({ project }) => {
         onMouseMove={handleMouseMove} // Capture mouse move events for cursor position
       >
         <div className={styles.left}>
-          <h1 className={styles.name}>{project.title}</h1>
-          <p className={styles.type}>{project.type}</p>
+          <div className={styles.inner}>
+            <h1 className={styles.name}>{project.title}</h1>
+            <p className={styles.type}>{project.type}</p>
+          </div>
+          <div className={styles.tags}>
+            {project.services.map((service, index) => (
+              <div key={index} className={styles.tech}>
+                {service}
+              </div>
+            ))}
+          </div>
         </div>
         <div className={styles.right}>
-          {project.services.map((service, index) => (
-            <div key={index} className={styles.tech}>
-              {service}
-            </div>
-          ))}
-
           <button className={styles.button}>
             <span>🡢</span>
           </button>

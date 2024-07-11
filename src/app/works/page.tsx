@@ -41,14 +41,14 @@ export default function Works() {
             >
               Design
             </div>
-            <div
+            {/* <div
               className={`${styles.tab} ${
                 activeTab === "Case Study" ? styles.active : styles.inactive
               }`}
               onClick={() => handleTabClick("Case Study")}
             >
               Case Study
-            </div>
+            </div> */}
           </div>
           <div className={styles.content}>
             {activeTab === "Website" && (
@@ -89,7 +89,7 @@ export default function Works() {
                   ))}
               </div>
             )}
-            {activeTab === "Case Study" && (
+            {/* {activeTab === "Case Study" && (
               <div className={styles.projects}>
                 {projects
                   .filter((project) => project.type === "case study")
@@ -107,7 +107,7 @@ export default function Works() {
                     </Link>
                   ))}
               </div>
-            )}
+            )} */}
           </div>
         </div>
         <DynamicContact />

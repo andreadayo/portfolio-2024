@@ -5,6 +5,10 @@
   display: flex;
   flex-direction: column;
 
+  @media screen and (max-width: 768px) {
+    padding: 60px 50px 0 50px;
+  }
+
   .header {
     display: flex;
     justify-content: space-between;
@@ -26,23 +30,64 @@
         letter-spacing: 1.2px;
         text-transform: uppercase;
       }
+
+      @media screen and (max-width: 768px) {
+        gap: 16px;
+
+        .line {
+          width: 36px;
+        }
+
+        .text {
+          font-size: var(--normal);
+        }
+      }
     }
 
     .icons {
       display: flex;
-      gap: 24px;
+
+      @media screen and (max-width: 470px) {
+        display: none;
+      }
+    }
+  }
+
+  .icons {
+    gap: 24px;
+
+    .iconContainer {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100%;
+      transition: ease-in 0.3s;
+
+      .icon {
+        width: 24px;
+        height: 24px;
+      }
+
+      &:hover {
+        .icon {
+          opacity: 0.8;
+          transition: ease-in 0.3s;
+        }
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      gap: 16px;
 
       .iconContainer {
-        width: 48px;
-        height: 48px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 100%;
+        width: 36px;
+        height: 36px;
 
         .icon {
-          width: 24px;
-          height: 24px;
+          width: 18px;
+          height: 18px;
         }
       }
     }
@@ -59,6 +104,8 @@
     .header {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       gap: 4px;
 
@@ -71,6 +118,31 @@
         color: var(--gray);
         font-family: "Atyp Display Medium", sans-serif;
         font-size: var(--h5);
+        margin-bottom: 24px;
+      }
+
+      @media screen and (max-width: 1024px) {
+        h1 {
+          font-size: var(--h3);
+        }
+
+        p {
+          font-size: var(--h6);
+        }
+      }
+
+      @media screen and (max-width: 640px) {
+        h1 {
+          font-size: var(--h4);
+        }
+      }
+    }
+
+    .icons {
+      display: none;
+
+      @media screen and (max-width: 470px) {
+        display: flex;
       }
     }
 
@@ -149,11 +221,24 @@
       cursor: pointer;
       opacity: 100%;
       transition: ease-in 0.3s;
+
+      &:hover {
+        opacity: 70%;
+        transition: ease-in 0.3s;
+      }
     }
 
-    .link:hover {
-      opacity: 70%;
-      transition: ease-in 0.3s;
+    @media screen and (max-width: 640px) {
+      .text,
+      .link {
+        font-size: var(--small);
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
     }
   }
 }

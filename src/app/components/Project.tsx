@@ -17,7 +17,9 @@ const Project: React.FC<ProjectProps> = ({ title, description, image }) => {
           <h1>{title}</h1>
           <p>{description}</p>
         </div>
-        <Button>🡢</Button>
+        <span className={styles.btn}>
+          <Button>🡢</Button>
+        </span>
       </div>
       <div className={styles.mockup}>
         <Image

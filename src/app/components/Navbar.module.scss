@@ -40,6 +40,15 @@
     );
     backdrop-filter: blur(50px);
   }
+
+  @media screen and (max-width: 640px) {
+    padding: 12px 16px;
+
+    .link {
+      padding: 12px 16px;
+      font-size: var(--small);
+    }
+  }
 }
 
 .nav-bar--hidden {
@@ -59,4 +68,8 @@
   );
   backdrop-filter: blur(50px);
   list-style: none;
+
+  @media screen and (max-width: 640px) {
+    height: 37px;
+  }
 }

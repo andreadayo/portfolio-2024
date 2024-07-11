@@ -152,6 +152,7 @@ export default function About() {
           <Title>Tech I like to use</Title>
           <div className={styles.container}>
             <Image
+              className={styles.img}
               src="/assets/icons/figma.svg"
               width={200}
               height={80}
@@ -159,6 +160,7 @@ export default function About() {
               loading="lazy"
             />
             <Image
+              className={styles.img}
               src="/assets/icons/react.svg"
               width={200}
               height={80}
@@ -166,6 +168,7 @@ export default function About() {
               loading="lazy"
             />
             <Image
+              className={styles.img}
               src="/assets/icons/nextjs.svg"
               width={200}
               height={80}
@@ -173,6 +176,7 @@ export default function About() {
               loading="lazy"
             />
             <Image
+              className={styles.img}
               src="/assets/icons/typescript.svg"
               width={200}
               height={80}
@@ -180,6 +184,7 @@ export default function About() {
               loading="lazy"
             />
             <Image
+              className={styles.img}
               src="/assets/icons/javascript.svg"
               width={200}
               height={80}
@@ -187,6 +192,7 @@ export default function About() {
               loading="lazy"
             />
             <Image
+              className={styles.img}
               src="/assets/icons/tailwindcss.svg"
               width={200}
               height={80}
@@ -194,6 +200,7 @@ export default function About() {
               loading="lazy"
             />
             <Image
+              className={styles.img}
               src="/assets/icons/netlify.svg"
               width={200}
               height={80}
@@ -201,6 +208,7 @@ export default function About() {
               loading="lazy"
             />
             <Image
+              className={styles.img}
               src="/assets/icons/vercel.svg"
               width={200}
               height={80}

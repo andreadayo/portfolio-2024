@@ -16,4 +16,16 @@
     letter-spacing: 1.2px;
     text-transform: uppercase;
   }
+
+  @media screen and (max-width: 768px) {
+    gap: 16px;
+
+    .line {
+      width: 36px;
+    }
+
+    .text {
+      font-size: var(--normal);
+    }
+  }
 }

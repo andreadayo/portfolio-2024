@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { PiReadCvLogo } from "react-icons/pi";
@@ -14,6 +15,40 @@ const icons = [
   { icon: <PiReadCvLogo className={styles.icon} />, key: "readcv" },
   { icon: <FaInstagram className={styles.icon} />, key: "instagram" },
 ];
+
+interface IconProps {
+  icons: { icon: JSX.Element; key: string }[];
+  sectionColor: string;
+  sectionRef: React.RefObject<HTMLDivElement>;
+}
+
+const IconComponent: React.FC<IconProps> = ({
+  icons,
+  sectionColor,
+  sectionRef,
+}) => (
+  <div className={styles.icons}>
+    {icons.map(({ icon, key }) => (
+      <motion.div
+        key={key}
+        ref={sectionRef}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        style={{
+          backgroundColor:
+            sectionColor === "var(--black)" ? "var(--white)" : "var(--black)",
+          color:
+            sectionColor === "var(--black)" ? "var(--black)" : "var(--white)",
+          transition: "background-color 0.5s ease-in-out",
+        }}
+        className={styles.iconContainer}
+      >
+        {icon}
+      </motion.div>
+    ))}
+  </div>
+);
 
 const Contact: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -90,45 +125,33 @@ const Contact: React.FC = () => {
             <div className={styles.line}></div>
             <h1 className={styles.text}>Contact</h1>
           </div>
-          <div className={styles.icons}>
-            {icons.map(({ icon, key }) => (
-              <motion.div
-                key={key}
-                ref={sectionRef}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                style={{
-                  backgroundColor:
-                    sectionColor === "var(--black)"
-                      ? "var(--white)"
-                      : "var(--black)",
-                  color:
-                    sectionColor === "var(--black)"
-                      ? "var(--black)"
-                      : "var(--white)",
-                  transition: "background-color 0.5s ease-in-out",
-                }}
-                className={styles.iconContainer}
-              >
-                {icon}
-              </motion.div>
-            ))}
-          </div>
+          <IconComponent
+            icons={icons}
+            sectionColor={sectionColor}
+            sectionRef={sectionRef}
+          />
         </div>
 
         <div className={styles.content}>
           <div className={styles.header}>
             <h1>Get in touch</h1>
             <p>Interested in working together?</p>
+            <IconComponent
+              icons={icons}
+              sectionColor={sectionColor}
+              sectionRef={sectionRef}
+            />
           </div>
 
-          <div className={styles.circle}>
+          <Link
+            href="mailto:andrealouisedayo@gmail.com?subject=Project%20Inquiry"
+            className={styles.circle}
+          >
             <div className={styles.logo}>
               <RiArrowRightUpLine className={styles.arrow} />
             </div>
             <div className={styles.text} ref={textRef}></div>
-          </div>
+          </Link>
         </div>
 
         <motion.div

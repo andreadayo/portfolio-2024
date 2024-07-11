@@ -10,7 +10,7 @@ import { FaGithub, FaFigma, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import Title from "@/app/components/Title";
 import Screenshots from "@/app/components/Screenshots";
-import Contact from "@/app/components/Contact";
+import Button from "@/app/components/Button";
 import styles from "./project.module.scss";
 
 interface ProjectPageParams {
@@ -51,25 +51,19 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
             </div>
             <div className={styles.right}>
               {project.github && (
-                <Link href={project.github}>
-                  <button className={styles.button}>
-                    <FaGithub />
-                  </button>
-                </Link>
+                <Button href={project.github}>
+                  <FaGithub />
+                </Button>
               )}
               {project.figma && (
-                <Link href={project.figma}>
-                  <button className={styles.button}>
-                    <FaFigma />
-                  </button>
-                </Link>
+                <Button href={project.figma}>
+                  <FaFigma />
+                </Button>
               )}
               {project.link && (
-                <Link href={project.link}>
-                  <button className={styles.button}>
-                    View Live <FiArrowUpRight style={{ marginLeft: "8px" }} />
-                  </button>
-                </Link>
+                <Button href={project.link}>
+                  View Live <FiArrowUpRight style={{ marginLeft: "8px" }} />
+                </Button>
               )}
             </div>
           </div>
@@ -140,16 +134,12 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
           <Screenshots projectId={project.id} />
 
           <div className={styles.buttons}>
-            <Link href="#">
-              <button className={styles.button}>
-                <FaArrowLeft style={{ marginRight: "8px" }} /> Previous Project
-              </button>
-            </Link>
-            <Link href="#">
-              <button className={styles.button}>
-                Next Project <FaArrowRight style={{ marginLeft: "8px" }} />
-              </button>
-            </Link>
+            <Button href="#">
+              <FaArrowLeft style={{ marginRight: "8px" }} /> Previous Project
+            </Button>
+            <Button href="#">
+              Next Project <FaArrowRight style={{ marginLeft: "8px" }} />
+            </Button>
           </div>
         </div>
         <DynamicContact />

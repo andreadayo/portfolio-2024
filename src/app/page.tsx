@@ -29,6 +29,7 @@ export default function Home() {
                 width={44}
                 height={44}
                 alt="Star"
+                loading="lazy"
               />
 
               <Image
@@ -36,6 +37,7 @@ export default function Home() {
                 width={118}
                 height={83}
                 alt="Dhea"
+                loading="lazy"
               />
 
               <Image
@@ -43,6 +45,7 @@ export default function Home() {
                 width={44}
                 height={44}
                 alt="Star"
+                loading="lazy"
               />
             </div>
             <h1 className={styles.heroText}>
