@@ -47,6 +47,7 @@ const Featured: React.FC<FeaturedProps> = ({ project }) => {
               {service}
             </div>
           ))}
+
           <button className={styles.button}>
             <span>🡢</span>
           </button>
@@ -73,6 +74,7 @@ const Featured: React.FC<FeaturedProps> = ({ project }) => {
             }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            loading="lazy"
           />
         )}
       </div>

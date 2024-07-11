@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import styles from "./Navbar.module.scss";
@@ -128,7 +127,11 @@ const Navbar: React.FC = () => {
           <Tab
             key={tab.path}
             setPosition={setPosition}
-            isActive={pathname === tab.path}
+            isActive={
+              tab.path === "/works"
+                ? pathname.includes(tab.path)
+                : pathname === tab.path
+            }
             href={tab.path}
           >
             {tab.name}

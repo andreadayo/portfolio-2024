@@ -1,29 +1,20 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import dynamic from "next/dynamic";
 import Project from "@/app/components/Project";
 import Contact from "@/app/components/Contact";
 import styles from "./works.module.scss";
-import { projects as projectData } from "../../../public/data/projects";
+import { projects } from "../../../public/data/projects";
 
-export default function Works({ projectId }: { projectId: string }) {
+const DynamicContact = dynamic(() => import("@/app/components/Contact"));
+
+export default function Works() {
   const [activeTab, setActiveTab] = useState("Website");
 
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
-  };
-
-  const projects = [
-    { id: "project-one", title: "Project One" },
-    { id: "project-two", title: "Project Two" },
-  ];
-
-  const router = useRouter();
-  const handleClick = (projectId: string) => {
-    router.push(`/works/${projectId}`);
   };
 
   return (
@@ -61,73 +52,65 @@ export default function Works({ projectId }: { projectId: string }) {
           </div>
           <div className={styles.content}>
             {activeTab === "Website" && (
-              <>
-                <div className={styles.projects}>
-                  {projectData
-                    .filter((project) => project.type === "website")
-                    .map((project) => (
-                      <div
-                        key={project.id}
-                        onClick={() => handleClick(project.id)}
-                        className={styles.projectLink}
-                      >
-                        <Project
-                          title={project.title}
-                          description={project.subtitle}
-                          image={project.image}
-                        />
-                      </div>
-                    ))}
-                </div>
-              </>
+              <div className={styles.projects}>
+                {projects
+                  .filter((project) => project.type === "website")
+                  .map((project) => (
+                    <Link
+                      className={styles.projectLink}
+                      key={project.id}
+                      href={`/works/${project.id}`}
+                    >
+                      <Project
+                        title={project.title}
+                        description={project.subtitle}
+                        image={project.image}
+                      />
+                    </Link>
+                  ))}
+              </div>
             )}
             {activeTab === "Design" && (
-              <>
-                <div className={styles.projects}>
-                  {projectData
-                    .filter((project) => project.type === "design")
-                    .map((project) => (
-                      <div
-                        key={project.id}
-                        onClick={() => handleClick(project.id)}
-                        className={styles.projectLink}
-                      >
-                        <Project
-                          title={project.title}
-                          description={project.subtitle}
-                          image={project.image}
-                        />
-                      </div>
-                    ))}
-                </div>
-              </>
+              <div className={styles.projects}>
+                {projects
+                  .filter((project) => project.type === "design")
+                  .map((project) => (
+                    <Link
+                      className={styles.projectLink}
+                      key={project.id}
+                      href={`/works/${project.id}`}
+                    >
+                      <Project
+                        title={project.title}
+                        description={project.subtitle}
+                        image={project.image}
+                      />
+                    </Link>
+                  ))}
+              </div>
             )}
             {activeTab === "Case Study" && (
-              <>
-                <>
-                  <div className={styles.projects}>
-                    {projectData
-                      .filter((project) => project.type === "case study")
-                      .map((project) => (
-                        <div
-                          key={project.id}
-                          onClick={() => handleClick(project.id)}
-                          className={styles.projectLink}
-                        >
-                          <Project
-                            title={project.title}
-                            description={project.subtitle}
-                            image={project.image}
-                          />
-                        </div>
-                      ))}
-                  </div>
-                </>
-              </>
+              <div className={styles.projects}>
+                {projects
+                  .filter((project) => project.type === "case study")
+                  .map((project) => (
+                    <Link
+                      className={styles.projectLink}
+                      key={project.id}
+                      href={`/works/${project.id}`}
+                    >
+                      <Project
+                        title={project.title}
+                        description={project.subtitle}
+                        image={project.image}
+                      />
+                    </Link>
+                  ))}
+              </div>
             )}
           </div>
         </div>
-        <Contact />
+        <DynamicContact />
       </div>
     </>
   );

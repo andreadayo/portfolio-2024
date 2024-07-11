@@ -1,18 +1,20 @@
 import React, { useState, MouseEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import Spline from "@splinetool/react-spline/next";
 import Title from "@/app/components/Title";
 import Technology from "@/app/components/Technology";
 import Featured from "@/app/components/Featured";
 import Paragraph from "@/app/components/Paragraph";
-import Contact from "@/app/components/Contact";
 import styles from "./page.module.scss";
 import { GoArrowRight } from "react-icons/go";
 import { projects as projectData } from "../../public/data/projects";
 
 const paragraph =
   "Hey there! I’m Andrea, a passionate front-end developer and designer based in Manila, with an eye for detail and a love for crafting seamless digital experiences. I have always been driven to create innovative designs and translate them into clean and responsive code. As a self-taught developer, I’m always expanding my skills and staying up-to-date with the latest technologies. I actively seek opportunities to learn from others. If you have an exciting project in mind or wish to collaborate, don’t hesitate to get in touch. Together, let’s create digital experiences that make a difference.";
+
+const DynamicContact = dynamic(() => import("@/app/components/Contact"));
 
 export default function Home() {
   return (
@@ -97,7 +99,7 @@ export default function Home() {
         </div>
 
         {/* Contact */}
-        <Contact />
+        <DynamicContact />
       </main>
     </>
   );

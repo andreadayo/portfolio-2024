@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Button from "@/app/components/Button";
 import styles from "./Project.module.scss";
 
 interface ProjectProps {
@@ -16,9 +17,7 @@ const Project: React.FC<ProjectProps> = ({ title, description, image }) => {
           <h1>{title}</h1>
           <p>{description}</p>
         </div>
-        <button className={styles.button}>
-          <span>🡢</span>
-        </button>
+        <Button>🡢</Button>
       </div>
       <div className={styles.mockup}>
         <Image
@@ -27,6 +26,7 @@ const Project: React.FC<ProjectProps> = ({ title, description, image }) => {
           height={900}
           alt={title}
           className={styles.img}
+          loading="lazy"
         />
       </div>
     </div>

@@ -1,14 +1,13 @@
-import type { Metadata } from "next";
+import React from "react";
+import { Metadata } from "next";
 import Navbar from "@/app/components/Navbar";
-import MomentumScroll from "@/app/components/MomentumScroll";
 import AnimatedCursor from "react-animated-cursor";
-
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Andrea Dayo • Front-end Developer",
   description:
-    "Hey there! I'm Dhea, a passionate front-end developer and designer based in Manila, with an eye for detail and a love for crafting seamless digital experiences. I have always been driven to create innovative designs and translate them into clean and responsive code.",
+    "Hey there! I'm Dhea, a passionate front-end developer and designer based in Manila, with an eye for detail and a love for crafting seamless digital experiences. I have always been driven to create innovative designs and translate them into clean and responsive code.",
 };
 
 export default function RootLayout({
@@ -35,7 +34,7 @@ export default function RootLayout({
             mixBlendMode: "exclusion",
           }}
         />
-        <main>{children}</main>
+        {children}
       </body>
     </html>
   );

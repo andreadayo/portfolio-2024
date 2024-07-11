@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import dynamic from "next/dynamic";
 import Title from "@/app/components/Title";
 import Contact from "@/app/components/Contact";
 import { jobsData, Company, Role } from "../../../public/data/experience";
 import styles from "./about.module.scss";
+
+const DynamicContact = dynamic(() => import("@/app/components/Contact"));
 
 export default function About() {
   return (
@@ -23,36 +25,40 @@ export default function About() {
                 <Image
                   className={styles.img}
                   src="/assets/images/A.jpg"
-                  width={806}
-                  height={605}
+                  width={300}
+                  height={80}
                   alt="Dhea"
+                  loading="lazy"
                 />
               </div>
               <div className={`${styles.item} ${styles.b}`}>
                 <Image
                   className={styles.img}
                   src="/assets/images/B.jpg"
-                  width={435}
-                  height={580}
+                  width={300}
+                  height={80}
                   alt="Dhea"
+                  loading="lazy"
                 />
               </div>
               <div className={`${styles.item} ${styles.c}`}>
                 <Image
                   className={styles.img}
                   src="/assets/images/C.jpg"
-                  width={767}
-                  height={605}
+                  width={400}
+                  height={100}
                   alt="Dhea"
+                  loading="lazy"
                 />
               </div>
               <div className={`${styles.item} ${styles.d}`}>
                 <Image
                   className={styles.img}
                   src="/assets/images/D.jpg"
-                  width={720}
-                  height={540}
+                  width={300}
+                  height={80}
                   alt="Dhea"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -99,6 +105,7 @@ export default function About() {
                   width={25}
                   height={25}
                   alt="Star"
+                  loading="lazy"
                 />
                 <span>{company.company}</span>
               </div>
@@ -149,55 +156,63 @@ export default function About() {
               width={200}
               height={80}
               alt="Figma"
+              loading="lazy"
             />
             <Image
               src="/assets/icons/react.svg"
               width={200}
               height={80}
               alt="React"
+              loading="lazy"
             />
             <Image
               src="/assets/icons/nextjs.svg"
               width={200}
               height={80}
               alt="Next.js"
+              loading="lazy"
             />
             <Image
               src="/assets/icons/typescript.svg"
               width={200}
               height={80}
               alt="Typescript"
+              loading="lazy"
             />
             <Image
               src="/assets/icons/javascript.svg"
               width={200}
               height={80}
               alt="Javascript"
+              loading="lazy"
             />
             <Image
               src="/assets/icons/tailwindcss.svg"
               width={200}
               height={80}
               alt="TailwindCSS"
+              loading="lazy"
             />
             <Image
               src="/assets/icons/netlify.svg"
               width={200}
               height={80}
               alt="Netlify"
+              loading="lazy"
             />
             <Image
               src="/assets/icons/vercel.svg"
               width={200}
               height={80}
               alt="Vercel"
+              loading="lazy"
             />
           </div>
         </div>
       </div>
 
       {/* Contact */}
-      <Contact />
+      <DynamicContact />
     </>
   );
 }

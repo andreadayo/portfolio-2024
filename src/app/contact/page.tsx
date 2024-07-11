@@ -1,12 +1,8 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import Title from "@/app/components/Title";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { PiReadCvLogo } from "react-icons/pi";
 import { RiArrowRightUpLine } from "react-icons/ri";
-import { GoArrowUp } from "react-icons/go";
 import styles from "./contact.module.scss";
 
 const icons = [

@@ -1,13 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams } from "next/navigation";
-import {
-  Project,
-  projects as projectData,
-} from "../../../../public/data/projects";
+import dynamic from "next/dynamic";
+import { notFound } from "next/navigation";
+import { projects } from "../../../../public/data/projects";
 import { FaGithub, FaFigma, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import Title from "@/app/components/Title";
@@ -15,31 +13,34 @@ import Screenshots from "@/app/components/Screenshots";
 import Contact from "@/app/components/Contact";
 import styles from "./project.module.scss";
 
-const ProjectPage: React.FC = () => {
-  const { projectId } = useParams(); // Use useParam to get projectId
-  const [project, setProject] = useState<Project | null>(null);
+interface ProjectPageParams {
+  projectId: string;
+}
 
-  useEffect(() => {
-    if (projectId) {
-      const project = projectData.find((p) => p.id === projectId);
-      setProject(project || null);
-    }
-  }, [projectId]);
+interface ProjectPageProps {
+  params: ProjectPageParams;
+}
+
+const DynamicContact = dynamic(() => import("@/app/components/Contact"));
+
+const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
+  const { projectId } = params;
+  const project = projects.find((p) => p.id === projectId);
 
   if (!project) {
-    return <div>Loading...</div>;
+    notFound();
   }
-
   return (
     <>
       <div className={styles.project}>
         <div className={styles.featured}>
           <Image
             src={project.image}
-            width={1500}
-            height={1500}
+            width={800}
+            height={500}
             alt={project.title}
             className={styles.img}
+            loading="lazy"
           />
         </div>
         <div className={styles.content}>
@@ -151,7 +152,7 @@ const ProjectPage: React.FC = () => {
             </Link>
           </div>
         </div>
-        <Contact />
+        <DynamicContact />
       </div>
     </>
   );

@@ -26,6 +26,7 @@ const Screenshots: React.FC<ScreenshotsProps> = ({ projectId }) => {
             height={600}
             alt={project.title}
             className={styles.img}
+            loading="lazy"
           />
         </div>
         <div className={styles.item}>
@@ -35,6 +36,7 @@ const Screenshots: React.FC<ScreenshotsProps> = ({ projectId }) => {
             height={600}
             alt={project.title}
             className={styles.img}
+            loading="lazy"
           />
         </div>
         <div className={styles.item}>
@@ -44,6 +46,7 @@ const Screenshots: React.FC<ScreenshotsProps> = ({ projectId }) => {
             height={600}
             alt={project.title}
             className={styles.img}
+            loading="lazy"
           />
         </div>
       </div>
