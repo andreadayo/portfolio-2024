@@ -9,22 +9,38 @@ import { GoArrowUp } from "react-icons/go";
 import styles from "./contact.module.scss";
 
 const icons = [
-  { icon: <FaGithub className={styles.icon} />, key: "github" },
-  { icon: <FaLinkedin className={styles.icon} />, key: "linkedin" },
-  { icon: <PiReadCvLogo className={styles.icon} />, key: "readcv" },
-  { icon: <FaInstagram className={styles.icon} />, key: "instagram" },
+  {
+    icon: <FaGithub className={styles.icon} />,
+    key: "github",
+    link: "https://github.com/andreadayo",
+  },
+  {
+    icon: <FaLinkedin className={styles.icon} />,
+    key: "linkedin",
+    link: "https://www.linkedin.com/in/andreadayo/",
+  },
+  {
+    icon: <PiReadCvLogo className={styles.icon} />,
+    key: "readcv",
+    link: "https://read.cv/andreadayo",
+  },
+  {
+    icon: <FaInstagram className={styles.icon} />,
+    key: "instagram",
+    link: "https://www.instagram.com/andreadayo_/",
+  },
 ];
 
 interface IconProps {
-  icons: { icon: JSX.Element; key: string }[];
+  icons: { icon: JSX.Element; key: string; link: string }[];
 }
 
 const IconComponent: React.FC<IconProps> = ({ icons }) => (
   <div className={styles.icons}>
-    {icons.map(({ icon, key }) => (
-      <div key={key} className={styles.iconContainer}>
-        {icon}
-      </div>
+    {icons.map(({ icon, key, link }) => (
+      <Link href={link} key={key} target="_blank">
+        <div className={styles.iconContainer}>{icon}</div>
+      </Link>
     ))}
   </div>
 );

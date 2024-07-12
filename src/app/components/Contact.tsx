@@ -10,14 +10,30 @@ import { GoArrowUp } from "react-icons/go";
 import styles from "./Contact.module.scss";
 
 const icons = [
-  { icon: <FaGithub className={styles.icon} />, key: "github" },
-  { icon: <FaLinkedin className={styles.icon} />, key: "linkedin" },
-  { icon: <PiReadCvLogo className={styles.icon} />, key: "readcv" },
-  { icon: <FaInstagram className={styles.icon} />, key: "instagram" },
+  {
+    icon: <FaGithub className={styles.icon} />,
+    key: "github",
+    link: "https://github.com/andreadayo",
+  },
+  {
+    icon: <FaLinkedin className={styles.icon} />,
+    key: "linkedin",
+    link: "https://www.linkedin.com/in/andreadayo/",
+  },
+  {
+    icon: <PiReadCvLogo className={styles.icon} />,
+    key: "readcv",
+    link: "https://read.cv/andreadayo",
+  },
+  {
+    icon: <FaInstagram className={styles.icon} />,
+    key: "instagram",
+    link: "https://www.instagram.com/andreadayo_/",
+  },
 ];
 
 interface IconProps {
-  icons: { icon: JSX.Element; key: string }[];
+  icons: { icon: JSX.Element; key: string; link: string }[];
   sectionColor: string;
   sectionRef: React.RefObject<HTMLDivElement>;
 }
@@ -28,24 +44,25 @@ const IconComponent: React.FC<IconProps> = ({
   sectionRef,
 }) => (
   <div className={styles.icons}>
-    {icons.map(({ icon, key }) => (
-      <motion.div
-        key={key}
-        ref={sectionRef}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        style={{
-          backgroundColor:
-            sectionColor === "var(--black)" ? "var(--white)" : "var(--black)",
-          color:
-            sectionColor === "var(--black)" ? "var(--black)" : "var(--white)",
-          transition: "background-color 0.5s ease-in-out",
-        }}
-        className={styles.iconContainer}
-      >
-        {icon}
-      </motion.div>
+    {icons.map(({ icon, key, link }) => (
+      <Link href={link} key={key} target="_blank">
+        <motion.div
+          ref={sectionRef}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          style={{
+            backgroundColor:
+              sectionColor === "var(--black)" ? "var(--white)" : "var(--black)",
+            color:
+              sectionColor === "var(--black)" ? "var(--black)" : "var(--white)",
+            transition: "background-color 0.5s ease-in-out",
+          }}
+          className={styles.iconContainer}
+        >
+          {icon}
+        </motion.div>
+      </Link>
     ))}
   </div>
 );
