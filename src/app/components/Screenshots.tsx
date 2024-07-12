@@ -1,54 +1,55 @@
-import React from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import Title from "@/app/components/Title";
 import styles from "./Screenshots.module.scss";
-import { projects } from "../../../public/data/projects";
 
 interface ScreenshotsProps {
   projectId: string;
 }
 
 const Screenshots: React.FC<ScreenshotsProps> = ({ projectId }) => {
-  const project = projects.find((p) => p.id === projectId);
+  const [images, setImages] = useState<string[]>([]);
 
-  if (!project) {
-    return <div>Project not found</div>;
-  }
+  const fetchImages = useCallback(async () => {
+    try {
+      const response = await fetch(`../api/projects/${projectId}/screenshots`);
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+      const data = await response.json();
+      setImages(data);
+    } catch (error) {
+      console.error("Failed to fetch images:", error);
+      setImages([]);
+    }
+  }, [projectId]);
+
+  useEffect(() => {
+    fetchImages();
+  }, [fetchImages]);
 
   return (
     <div className={styles.screenshots}>
-      <Title>Screenshots</Title>
+      {images.length > 0 && (
+        <span>
+          <Title>Screenshots</Title>
+        </span>
+      )}
       <div className={styles.container}>
-        <div className={styles.item}>
-          <Image
-            src="/assets/images/sample2.jpg"
-            width={600}
-            height={600}
-            alt={project.title}
-            className={styles.img}
-            loading="lazy"
-          />
-        </div>
-        <div className={styles.item}>
-          <Image
-            src="/assets/images/sample2.jpg"
-            width={600}
-            height={600}
-            alt={project.title}
-            className={styles.img}
-            loading="lazy"
-          />
-        </div>
-        <div className={styles.item}>
-          <Image
-            src="/assets/images/sample2.jpg"
-            width={600}
-            height={600}
-            alt={project.title}
-            className={styles.img}
-            loading="lazy"
-          />
-        </div>
+        {images.length > 0
+          ? images.map((url, index) => (
+              <div key={index} className={styles.item}>
+                <Image
+                  src={url}
+                  width={600}
+                  height={600}
+                  alt={`Screenshot ${index + 1}`}
+                  className={styles.img}
+                  loading="lazy"
+                />
+              </div>
+            ))
+          : null}
       </div>
     </div>
   );

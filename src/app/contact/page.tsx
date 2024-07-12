@@ -1,8 +1,11 @@
 "use client";
+
 import React, { useRef, useEffect, useState } from "react";
+import Link from "next/link";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { PiReadCvLogo } from "react-icons/pi";
 import { RiArrowRightUpLine } from "react-icons/ri";
+import { GoArrowUp } from "react-icons/go";
 import styles from "./contact.module.scss";
 
 const icons = [
@@ -12,7 +15,21 @@ const icons = [
   { icon: <FaInstagram className={styles.icon} />, key: "instagram" },
 ];
 
-export default function Contact() {
+interface IconProps {
+  icons: { icon: JSX.Element; key: string }[];
+}
+
+const IconComponent: React.FC<IconProps> = ({ icons }) => (
+  <div className={styles.icons}>
+    {icons.map(({ icon, key }) => (
+      <div key={key} className={styles.iconContainer}>
+        {icon}
+      </div>
+    ))}
+  </div>
+);
+
+const Contact: React.FC = () => {
   const textRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
@@ -31,43 +48,46 @@ export default function Contact() {
     }
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Smooth scrolling behavior
+    });
+  };
+
   return (
-    <>
-      <div className={styles.contactPage}>
-        <div className={styles.contact}>
-          <div className={styles.header}>
-            <div className={styles.title}>
-              <div className={styles.line}></div>
-              <h1 className={styles.text}>Contact</h1>
-            </div>
-            <div className={styles.icons}>
-              {icons.map(({ icon, key }) => (
-                <div key={key} className={styles.iconContainer}>
-                  {icon}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className={styles.content}>
-            <div className={styles.header}>
-              <h1>Get in touch</h1>
-              <p>Interested in working together?</p>
-            </div>
-
-            <div className={styles.circle}>
-              <div className={styles.logo}>
-                <RiArrowRightUpLine className={styles.arrow} />
-              </div>
-              <div className={styles.text} ref={textRef}></div>
-            </div>
-          </div>
-
-          <div className={styles.footer}>
-            <p className={styles.text}>© 2024 All rights reserved.</p>
-          </div>
+    <div className={styles.contact}>
+      <div className={styles.header}>
+        <div className={styles.title}>
+          <div className={styles.line}></div>
+          <h1 className={styles.text}>Contact</h1>
         </div>
+        <IconComponent icons={icons} />
       </div>
-    </>
+
+      <div className={styles.content}>
+        <div className={styles.header}>
+          <h1>Get in touch</h1>
+          <p>Interested in working together?</p>
+          <IconComponent icons={icons} />
+        </div>
+
+        <Link
+          href="mailto:andrealouisedayo@gmail.com?subject=Project%20Inquiry"
+          className={styles.circle}
+        >
+          <div className={styles.logo}>
+            <RiArrowRightUpLine className={styles.arrow} />
+          </div>
+          <div className={styles.text} ref={textRef}></div>
+        </Link>
+      </div>
+
+      <div className={styles.footer}>
+        <p className={styles.text}>© 2024 All rights reserved.</p>
+      </div>
+    </div>
   );
-}
+};
+
+export default Contact;

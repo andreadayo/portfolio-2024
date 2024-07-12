@@ -133,14 +133,14 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
           {/* Screenshots */}
           <Screenshots projectId={project.id} />
 
-          <div className={styles.buttons}>
+          {/* <div className={styles.buttons}>
             <Button href="#">
               <FaArrowLeft style={{ marginRight: "8px" }} /> Previous Project
             </Button>
             <Button href="#">
               Next Project <FaArrowRight style={{ marginLeft: "8px" }} />
             </Button>
-          </div>
+          </div> */}
         </div>
         <DynamicContact />
       </div>
