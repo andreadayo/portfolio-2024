@@ -8,6 +8,7 @@ import { PiReadCvLogo } from "react-icons/pi";
 import { RiArrowRightUpLine } from "react-icons/ri";
 import { GoArrowUp } from "react-icons/go";
 import styles from "./Contact.module.scss";
+import AnimatedDiv from "@/app/components/animation/AnimatedDiv";
 
 const icons = [
   {
@@ -150,25 +151,28 @@ const Contact: React.FC = () => {
         </div>
 
         <div className={styles.content}>
-          <div className={styles.header}>
-            <h1>Get in touch</h1>
-            <p>Interested in working together?</p>
-            <IconComponent
-              icons={icons}
-              sectionColor={sectionColor}
-              sectionRef={sectionRef}
-            />
-          </div>
-
-          <Link
-            href="mailto:andrealouisedayo@gmail.com?subject=Project%20Inquiry"
-            className={styles.circle}
-          >
-            <div className={styles.logo}>
-              <RiArrowRightUpLine className={styles.arrow} />
+          <AnimatedDiv animationType="fadeInUp">
+            <div className={styles.header}>
+              <h1>Get in touch</h1>
+              <p>Interested in working together?</p>
+              <IconComponent
+                icons={icons}
+                sectionColor={sectionColor}
+                sectionRef={sectionRef}
+              />
             </div>
-            <div className={styles.text} ref={textRef}></div>
-          </Link>
+          </AnimatedDiv>
+          <AnimatedDiv animationType="popIn">
+            <Link
+              href="mailto:andrealouisedayo@gmail.com?subject=Project%20Inquiry"
+              className={styles.circle}
+            >
+              <div className={styles.logo}>
+                <RiArrowRightUpLine className={styles.arrow} />
+              </div>
+              <div className={styles.text} ref={textRef}></div>
+            </Link>
+          </AnimatedDiv>
         </div>
 
         <motion.div
