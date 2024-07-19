@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import Navbar from "@/app/components/Navbar";
 import AnimatedCursor from "react-animated-cursor";
+import PageTransition from "@/app/components/animation/PageTransition";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -34,7 +35,7 @@ export default function RootLayout({
             mixBlendMode: "exclusion",
           }}
         />
-        {children}
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   );

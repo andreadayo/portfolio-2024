@@ -7,6 +7,7 @@ import { PiReadCvLogo } from "react-icons/pi";
 import { RiArrowRightUpLine } from "react-icons/ri";
 import styles from "./contact.module.scss";
 import AnimatedDiv from "@/app/components/animation/AnimatedDiv";
+import Stairs from "../components/animation/Stairs";
 
 const icons = [
   {
@@ -72,40 +73,42 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className={styles.contact}>
-      <div className={styles.header}>
-        <div className={styles.title}>
-          <div className={styles.line}></div>
-          <h1 className={styles.text}>Contact</h1>
-        </div>
-        <IconComponent icons={icons} />
-      </div>
-
-      <div className={styles.content}>
-        <AnimatedDiv animationType="fadeInUp">
-          <div className={styles.header}>
-            <h1>Get in touch</h1>
-            <p>Interested in working together?</p>
-            <IconComponent icons={icons} />
+    <Stairs>
+      <div className={styles.contact}>
+        <div className={styles.header}>
+          <div className={styles.title}>
+            <div className={styles.line}></div>
+            <h1 className={styles.text}>Contact</h1>
           </div>
-        </AnimatedDiv>
-        <AnimatedDiv animationType="popIn">
-          <Link
-            href="mailto:andrealouisedayo@gmail.com?subject=Project%20Inquiry"
-            className={styles.circle}
-          >
-            <div className={styles.logo}>
-              <RiArrowRightUpLine className={styles.arrow} />
-            </div>
-            <div className={styles.text} ref={textRef}></div>
-          </Link>
-        </AnimatedDiv>
-      </div>
+          <IconComponent icons={icons} />
+        </div>
 
-      <div className={styles.footer}>
-        <p className={styles.text}>© 2024 All rights reserved.</p>
+        <div className={styles.content}>
+          <AnimatedDiv animationType="fadeInUp">
+            <div className={styles.header}>
+              <h1>Get in touch</h1>
+              <p>Interested in working together?</p>
+              <IconComponent icons={icons} />
+            </div>
+          </AnimatedDiv>
+          <AnimatedDiv animationType="popIn">
+            <Link
+              href="mailto:andrealouisedayo@gmail.com?subject=Project%20Inquiry"
+              className={styles.circle}
+            >
+              <div className={styles.logo}>
+                <RiArrowRightUpLine className={styles.arrow} />
+              </div>
+              <div className={styles.text} ref={textRef}></div>
+            </Link>
+          </AnimatedDiv>
+        </div>
+
+        <div className={styles.footer}>
+          <p className={styles.text}>© 2024 All rights reserved.</p>
+        </div>
       </div>
-    </div>
+    </Stairs>
   );
 };
 

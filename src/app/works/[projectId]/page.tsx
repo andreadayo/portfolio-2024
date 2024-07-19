@@ -12,6 +12,7 @@ import Screenshots from "@/app/components/Screenshots";
 import Button from "@/app/components/Button";
 import styles from "./project.module.scss";
 import AnimatedDiv from "@/app/components/animation/AnimatedDiv";
+import Stairs from "@/app/components/animation/Stairs";
 
 interface ProjectPageParams {
   projectId: string;
@@ -32,125 +33,126 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
   }
   return (
     <>
-      <div className={styles.project}>
-        <div className={styles.featured}>
-          <AnimatedDiv animationType="fadeInUp">
-            <Image
-              src={project.image}
-              width={800}
-              height={500}
-              alt={project.title}
-              className={styles.img}
-              loading="lazy"
-            />
-          </AnimatedDiv>
-        </div>
+      <Stairs>
+        <div className={styles.project}>
+          <div className={styles.featured}>
+            <AnimatedDiv animationType="fadeInUp">
+              <Image
+                src={project.image}
+                width={800}
+                height={500}
+                alt={project.title}
+                className={styles.img}
+                loading="lazy"
+              />
+            </AnimatedDiv>
+          </div>
 
-        <div className={styles.content}>
-          <AnimatedDiv animationType="fadeInUp">
-            <div className={styles.header}>
+          <div className={styles.content}>
+            <AnimatedDiv animationType="fadeInUp">
+              <div className={styles.header}>
+                <div className={styles.left}>
+                  <h1>{project.title}</h1>
+                  <h3>{project.subtitle}</h3>
+                </div>
+                <div className={styles.right}>
+                  {project.github && (
+                    <Button href={project.github}>
+                      <FaGithub />
+                    </Button>
+                  )}
+                  {project.figma && (
+                    <Button href={project.figma}>
+                      <FaFigma />
+                    </Button>
+                  )}
+                  {project.link && (
+                    <Button href={project.link}>
+                      View Live <FiArrowUpRight style={{ marginLeft: "8px" }} />
+                    </Button>
+                  )}
+                </div>
+              </div>
+            </AnimatedDiv>
+            <div className={styles.details}>
               <div className={styles.left}>
-                <h1>{project.title}</h1>
-                <h3>{project.subtitle}</h3>
-              </div>
-              <div className={styles.right}>
-                {project.github && (
-                  <Button href={project.github}>
-                    <FaGithub />
-                  </Button>
-                )}
-                {project.figma && (
-                  <Button href={project.figma}>
-                    <FaFigma />
-                  </Button>
-                )}
-                {project.link && (
-                  <Button href={project.link}>
-                    View Live <FiArrowUpRight style={{ marginLeft: "8px" }} />
-                  </Button>
-                )}
-              </div>
-            </div>
-          </AnimatedDiv>
-          <div className={styles.details}>
-            <div className={styles.left}>
-              {/* Year */}
-              <AnimatedDiv animationType="fadeInUp">
-                <div className={styles.info}>
-                  <h3>Year</h3>
-                  <p>{project.year}</p>
-                </div>
-              </AnimatedDiv>
-
-              {/* Description */}
-              <AnimatedDiv animationType="fadeInUp">
-                <div className={styles.info}>
-                  <h3>Description</h3>
-                  <p>{project.description}</p>
-                </div>
-              </AnimatedDiv>
-
-              {/* Partners */}
-              {project.partners && (
+                {/* Year */}
                 <AnimatedDiv animationType="fadeInUp">
                   <div className={styles.info}>
-                    <h3>Partners</h3>
-                    <p>{project.partners}</p>
+                    <h3>Year</h3>
+                    <p>{project.year}</p>
                   </div>
                 </AnimatedDiv>
-              )}
-            </div>
-            <div className={styles.right}>
-              {/* Tools */}
-              <AnimatedDiv animationType="fadeInUp">
-                <div className={styles.info}>
-                  <h3>Tools</h3>
-                  <div className={styles.list}>
-                    {project.tools.map((tool, index) => (
-                      <div key={index} className={styles.tech}>
-                        <p>{tool}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </AnimatedDiv>
 
-              {/* Services */}
-              <AnimatedDiv animationType="fadeInUp">
-                <div className={styles.info}>
-                  <h3>Services</h3>
-                  <div className={styles.list}>
-                    {project.services.map((service, index) => (
-                      <div key={index} className={styles.tech}>
-                        <p>{service}</p>
-                      </div>
-                    ))}
+                {/* Description */}
+                <AnimatedDiv animationType="fadeInUp">
+                  <div className={styles.info}>
+                    <h3>Description</h3>
+                    <p>{project.description}</p>
                   </div>
-                </div>
-              </AnimatedDiv>
-            </div>
-          </div>
-          <AnimatedDiv animationType="fadeInUp">
-            <div className={styles.palette}>
-              <Title>Palette</Title>
-              <div className={styles.colors}>
-                {project.palette.map((color, index) => (
-                  <div key={index} className={styles.item}>
-                    <div
-                      className={styles.color}
-                      style={{ backgroundColor: color }}
-                    />
-                    <p>{color}</p>
+                </AnimatedDiv>
+
+                {/* Partners */}
+                {project.partners && (
+                  <AnimatedDiv animationType="fadeInUp">
+                    <div className={styles.info}>
+                      <h3>Partners</h3>
+                      <p>{project.partners}</p>
+                    </div>
+                  </AnimatedDiv>
+                )}
+              </div>
+              <div className={styles.right}>
+                {/* Tools */}
+                <AnimatedDiv animationType="fadeInUp">
+                  <div className={styles.info}>
+                    <h3>Tools</h3>
+                    <div className={styles.list}>
+                      {project.tools.map((tool, index) => (
+                        <div key={index} className={styles.tech}>
+                          <p>{tool}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                ))}
+                </AnimatedDiv>
+
+                {/* Services */}
+                <AnimatedDiv animationType="fadeInUp">
+                  <div className={styles.info}>
+                    <h3>Services</h3>
+                    <div className={styles.list}>
+                      {project.services.map((service, index) => (
+                        <div key={index} className={styles.tech}>
+                          <p>{service}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </AnimatedDiv>
               </div>
             </div>
-          </AnimatedDiv>
+            <AnimatedDiv animationType="fadeInUp">
+              <div className={styles.palette}>
+                <Title>Palette</Title>
+                <div className={styles.colors}>
+                  {project.palette.map((color, index) => (
+                    <div key={index} className={styles.item}>
+                      <div
+                        className={styles.color}
+                        style={{ backgroundColor: color }}
+                      />
+                      <p>{color}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </AnimatedDiv>
 
-          {/* Screenshots */}
-          <Screenshots projectId={project.id} />
+            {/* Screenshots */}
+            <Screenshots projectId={project.id} />
 
-          {/* <div className={styles.buttons}>
+            {/* <div className={styles.buttons}>
             <Button href="#">
               <FaArrowLeft style={{ marginRight: "8px" }} /> Previous Project
             </Button>
@@ -158,9 +160,10 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
               Next Project <FaArrowRight style={{ marginLeft: "8px" }} />
             </Button>
           </div> */}
+          </div>
+          <DynamicContact />
         </div>
-        <DynamicContact />
-      </div>
+      </Stairs>
     </>
   );
 };
