@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import Title from "@/app/components/Title";
@@ -45,11 +47,10 @@ const Screenshots: React.FC<ScreenshotsProps> = ({ projectId }) => {
                   <div key={index} className={styles.item}>
                     <Image
                       src={url}
-                      width={600}
-                      height={600}
+                      width={1600}
+                      height={900}
                       alt={`Screenshot ${index + 1}`}
                       className={styles.img}
-                      loading="lazy"
                     />
                   </div>
                 </AnimatedDiv>

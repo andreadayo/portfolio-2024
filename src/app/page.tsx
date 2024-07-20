@@ -1,4 +1,5 @@
 import React, { useState, MouseEvent } from "react";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -33,7 +34,6 @@ export default function Home() {
                     width={44}
                     height={44}
                     alt="Star"
-                    loading="lazy"
                   />
 
                   <Image
@@ -41,7 +41,6 @@ export default function Home() {
                     width={118}
                     height={83}
                     alt="Dhea"
-                    loading="lazy"
                   />
 
                   <Image
@@ -49,7 +48,6 @@ export default function Home() {
                     width={44}
                     height={44}
                     alt="Star"
-                    loading="lazy"
                   />
                 </div>
               </AnimatedDiv>
@@ -89,7 +87,7 @@ export default function Home() {
                   JavaScript, Typescript, Framer Motion, Tailwind CSS
                 </Technology>
                 <Technology image="/assets/shapes/backend.svg" title="Back-end">
-                  PHP, MySQL, Laravel, Java
+                  PHP, MySQL, Java
                 </Technology>
               </div>
             </AnimatedDiv>

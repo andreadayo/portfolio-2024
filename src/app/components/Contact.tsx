@@ -9,6 +9,7 @@ import { RiArrowRightUpLine } from "react-icons/ri";
 import { GoArrowUp } from "react-icons/go";
 import styles from "./Contact.module.scss";
 import AnimatedDiv from "@/app/components/animation/AnimatedDiv";
+import TextTransformer from "@/app/components/TextTransformer";
 
 const icons = [
   {
@@ -99,24 +100,6 @@ const Contact: React.FC = () => {
     };
   }, []);
 
-  const textRef = useRef<HTMLParagraphElement>(null);
-
-  useEffect(() => {
-    const textElement = textRef.current;
-    if (textElement) {
-      const originalText = "Send a message • Send a message •";
-      const transformedText = originalText
-        .split("")
-        .map(
-          (char, i) =>
-            `<span style="transform:rotate(${i * 10.7}deg)">${char}</span>`
-        )
-        .join("");
-
-      textElement.innerHTML = transformedText;
-    }
-  }, []);
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -170,7 +153,7 @@ const Contact: React.FC = () => {
               <div className={styles.logo}>
                 <RiArrowRightUpLine className={styles.arrow} />
               </div>
-              <div className={styles.text} ref={textRef}></div>
+              <TextTransformer text="Send a message • Send a message •" />
             </Link>
           </AnimatedDiv>
         </div>

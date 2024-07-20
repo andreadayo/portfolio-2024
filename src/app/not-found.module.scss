@@ -1,0 +1,66 @@
+.error {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  .overlay {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      #111414 0%,
+      rgba(11, 13, 13, 0.63) 26.4%,
+      rgba(14, 16, 16, 0.82) 66.4%,
+      #111414 100%
+    );
+    pointer-events: none;
+
+    .errorSection {
+      max-width: 1030px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+
+      h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: var(--h2);
+        line-height: 130%;
+        letter-spacing: 2.7px;
+      }
+
+      p {
+        color: var(--gray);
+        font-family: "Atyp Display Medium", sans-serif;
+        font-size: var(--h5);
+        margin-bottom: 24px;
+      }
+
+      @media screen and (max-width: 1024px) {
+        padding: 0 60px;
+
+        h1 {
+          font-size: var(--h3);
+        }
+
+        p {
+          font-size: var(--h6);
+        }
+      }
+
+      @media screen and (max-width: 640px) {
+        pointer-events: auto;
+
+        h1 {
+          font-size: var(--h4);
+        }
+      }
+    }
+  }
+}

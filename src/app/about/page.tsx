@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { Metadata } from "next";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import Title from "@/app/components/Title";
@@ -6,6 +7,10 @@ import { jobsData, Company, Role } from "../../../public/data/experience";
 import styles from "./about.module.scss";
 import AnimatedDiv from "@/app/components/animation/AnimatedDiv";
 import Stairs from "@/app/components/animation/Stairs";
+
+export const metadata: Metadata = {
+  title: "About",
+};
 
 const DynamicContact = dynamic(() => import("@/app/components/Contact"));
 
@@ -33,7 +38,6 @@ export default function About() {
                       width={300}
                       height={80}
                       alt="Dhea"
-                      loading="lazy"
                     />
                   </div>
                   <div className={`${styles.item} ${styles.b}`}>
@@ -43,7 +47,6 @@ export default function About() {
                       width={300}
                       height={80}
                       alt="Dhea"
-                      loading="lazy"
                     />
                   </div>
                   <div className={`${styles.item} ${styles.c}`}>
@@ -53,7 +56,6 @@ export default function About() {
                       width={400}
                       height={100}
                       alt="Dhea"
-                      loading="lazy"
                     />
                   </div>
                   <div className={`${styles.item} ${styles.d}`}>
@@ -63,7 +65,6 @@ export default function About() {
                       width={300}
                       height={80}
                       alt="Dhea"
-                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -117,7 +118,6 @@ export default function About() {
                       width={25}
                       height={25}
                       alt="Star"
-                      loading="lazy"
                     />
                     <span>{company.company}</span>
                   </div>
@@ -176,7 +176,6 @@ export default function About() {
                   width={200}
                   height={80}
                   alt="Figma"
-                  loading="lazy"
                 />
                 <Image
                   className={styles.img}
@@ -184,7 +183,6 @@ export default function About() {
                   width={200}
                   height={80}
                   alt="React"
-                  loading="lazy"
                 />
                 <Image
                   className={styles.img}
@@ -192,7 +190,6 @@ export default function About() {
                   width={200}
                   height={80}
                   alt="Next.js"
-                  loading="lazy"
                 />
                 <Image
                   className={styles.img}
@@ -200,7 +197,6 @@ export default function About() {
                   width={200}
                   height={80}
                   alt="Typescript"
-                  loading="lazy"
                 />
                 <Image
                   className={styles.img}
@@ -208,7 +204,6 @@ export default function About() {
                   width={200}
                   height={80}
                   alt="Javascript"
-                  loading="lazy"
                 />
                 <Image
                   className={styles.img}
@@ -216,7 +211,6 @@ export default function About() {
                   width={200}
                   height={80}
                   alt="TailwindCSS"
-                  loading="lazy"
                 />
                 <Image
                   className={styles.img}
@@ -224,7 +218,6 @@ export default function About() {
                   width={200}
                   height={80}
                   alt="Netlify"
-                  loading="lazy"
                 />
                 <Image
                   className={styles.img}
@@ -232,7 +225,6 @@ export default function About() {
                   width={200}
                   height={80}
                   alt="Vercel"
-                  loading="lazy"
                 />
               </div>
             </div>

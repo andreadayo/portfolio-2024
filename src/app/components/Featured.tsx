@@ -10,7 +10,6 @@ interface FeaturedProps {
     id: string;
     type: string;
     title: string;
-    image: string;
     services: string[];
   };
 }
@@ -65,7 +64,7 @@ const Featured: React.FC<FeaturedProps> = ({ project }) => {
 
         {isHovered && (
           <motion.img
-            src={project.image}
+            src={`/data/projects/featured/${project.id}.png`}
             alt={project.title}
             className={styles.image}
             style={{
@@ -77,7 +76,6 @@ const Featured: React.FC<FeaturedProps> = ({ project }) => {
             }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            loading="lazy"
           />
         )}
       </div>

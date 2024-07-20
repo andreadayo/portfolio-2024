@@ -61,7 +61,7 @@
     width: 100%;
     height: 400px;
     position: absolute;
-    top: 135px;
+    top: 100px;
     transition: ease-in 0.3s;
 
     .img {
@@ -83,12 +83,19 @@
 
   &:hover {
     .mockup {
-      top: 125px;
+      top: 90px;
       transition: ease-in 0.3s;
     }
   }
 
   @media screen and (max-width: 580px) {
     height: 300px;
+
+    &:hover {
+      .mockup {
+        top: 90px;
+        transition: ease-in 0.3s;
+      }
+    }
   }
 }

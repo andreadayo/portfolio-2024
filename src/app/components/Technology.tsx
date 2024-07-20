@@ -19,7 +19,6 @@ const Technology: React.FC<TechnologyProps> = ({ image, title, children }) => {
           width={44}
           height={44}
           alt={title}
-          loading="lazy"
         />
       </div>
       <h1 className={styles.title}>{title}</h1>

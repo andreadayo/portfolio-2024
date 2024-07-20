@@ -22,61 +22,48 @@ export const jobsData: Company[] = [
         ],
       },
       {
-        position: "Lead Developer",
-        date: "Jan 2022 – May 2024",
+        position: "Lead Front-end Developer",
+        date: "Jun 2023 – May 2024",
         description: [
-          "Led a team of developers in the design and implementation of web applications.",
-          "Implemented best practices in coding and version control.",
+          "Responsible for managing the front-end development team, overseeing project execution, and collaborating with other teams to ensure adherence to project timelines and requirements. These projects include the R101 (recruitment) and Right Click website.",
+          "Conducted thorough quality assurance checks on front-end code and functionality, ensuring high standards of performance and user experience.",
         ],
       },
       {
-        position: "Junior Developer",
-        date: "Apr 2020 – Dec 2021",
+        position: "Front-end Developer",
+        date: "Oct 2022 – Jun 2023",
         description: [
-          "Assisted senior developers in coding and testing of web applications.",
-          "Gained proficiency in JavaScript, HTML, and CSS.",
-        ],
-      },
-    ],
-  },
-  {
-    company: "TomasinoWeb",
-    roles: [
-      {
-        position: "Chief Technology Officer",
-        date: "Jun 2024 – Present",
-        description: [
-          "In-charge of supervising the entire Web Technologies Department, overseeing project management and team coordination.",
-          "Manage TomasinoWeb’s platforms including the main website, domain, and emails.",
-        ],
-      },
-      {
-        position: "Lead Developer",
-        date: "Jan 2022 – May 2024",
-        description: [
-          "Led a team of developers in the design and implementation of web applications.",
-          "Implemented best practices in coding and version control.",
-        ],
-      },
-      {
-        position: "Junior Developer",
-        date: "Apr 2020 – Dec 2021",
-        description: [
-          "Assisted senior developers in coding and testing of web applications.",
-          "Gained proficiency in JavaScript, HTML, and CSS.",
+          "Developed dynamic and engaging websites for various projects using front-end technologies such as HTML, CSS, JavaScript, and React. These projects include Draft 143, Lamona, and TomasinoWeb's Main Website.",
+          "Appointed as the project head of the front-end development team for the Draft 143 project, which included delegating tasks and ensuring the quality of the code.",
+          "Assisted the department’s UI/UX team in the creation of web designs with the use of Figma which included creating wireframes and prototypes.",
         ],
       },
     ],
   },
   {
-    company: "Another Company",
+    company: "Fiverr",
     roles: [
       {
-        position: "Senior Developer",
-        date: "Mar 2018 – Dec 2019",
+        position: "Freelance UI/UX Designer",
+        date: "Nov 2023 – Present",
         description: [
-          "Developed scalable and maintainable web applications.",
-          "Collaborated with UX/UI designers to enhance user experience.",
+          "Designed blog sites and landing pages tailored to client specifications.",
+          "Utilized design tools like Photoshop and Figma to create high-fidelity prototypes.",
+          "Collaborated with clients to understand their needs and deliver custom design solutions.",
+        ],
+      },
+    ],
+  },
+  {
+    company: "Edufied",
+    roles: [
+      {
+        position: "UI/UX Designer Trainee",
+        date: "Aug 2023 – Dec 2023",
+        description: [
+          "Contributed to enhancing user experiences through the creation of wireframes and the redesign of interfaces",
+          "Designed certificates and banners for client companies.",
+          "Collaborated closely with developers, ensuring seamless implementation of designs.",
         ],
       },
     ],

@@ -1,6 +1,5 @@
-"use client";
-
 import React from "react";
+import { Metadata } from "next";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
@@ -14,6 +13,25 @@ import styles from "./project.module.scss";
 import AnimatedDiv from "@/app/components/animation/AnimatedDiv";
 import Stairs from "@/app/components/animation/Stairs";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { projectId: string };
+}): Promise<Metadata> {
+  const project = projects.find((p) => p.id === params.projectId);
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+      description: "This project does not exist.",
+    };
+  }
+
+  return {
+    title: project.title,
+    description: project.description,
+  };
+}
 interface ProjectPageParams {
   projectId: string;
 }
@@ -35,15 +53,19 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
     <>
       <Stairs>
         <div className={styles.project}>
-          <div className={styles.featured}>
+          <div
+            className={styles.featured}
+            style={{
+              background: `linear-gradient(180deg, #1c1c1c 0%, rgba(28, 28, 28, 0.20) 30%, ${project.palette[0]} 100%)`,
+            }}
+          >
             <AnimatedDiv animationType="fadeInUp">
               <Image
-                src={project.image}
-                width={800}
-                height={500}
+                src={`/data/projects/mockup/${project.id}.png`}
+                width={1600}
+                height={900}
                 alt={project.title}
                 className={styles.img}
-                loading="lazy"
               />
             </AnimatedDiv>
           </div>
@@ -79,7 +101,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
                 {/* Year */}
                 <AnimatedDiv animationType="fadeInUp">
                   <div className={styles.info}>
-                    <h3>Year</h3>
+                    <h3>Date</h3>
                     <p>{project.year}</p>
                   </div>
                 </AnimatedDiv>

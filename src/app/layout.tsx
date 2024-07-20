@@ -6,9 +6,12 @@ import PageTransition from "@/app/components/animation/PageTransition";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Andrea Dayo • Front-end Developer",
+  title: {
+    template: "%s • Andrea Dayo",
+    default: "Portfolio • Andrea Dayo",
+  },
   description:
-    "Hey there! I'm Dhea, a passionate front-end developer and designer based in Manila, with an eye for detail and a love for crafting seamless digital experiences. I have always been driven to create innovative designs and translate them into clean and responsive code.",
+    "Hey there! I'm Andrea, a passionate front-end developer and designer based in Manila, with an eye for detail and a love for crafting seamless digital experiences. I have always been driven to create innovative designs and translate them into clean and responsive code.",
 };
 
 export default function RootLayout({
@@ -18,6 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta property="og:image" content="/assets/images/Cover.png" />
+      </head>
       <body>
         <Navbar />
         <AnimatedCursor
