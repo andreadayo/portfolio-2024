@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   },
   description:
     "Hey there! I'm Andrea, a passionate front-end developer and designer based in Manila, with an eye for detail and a love for crafting seamless digital experiences. I have always been driven to create innovative designs and translate them into clean and responsive code.",
+  metadataBase: new URL("https://andreadayo.netlify.app/"),
 };
 
 export default function RootLayout({
