@@ -89,7 +89,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
                     </Button>
                   )}
                   {project.link && (
-                    <Button href={project.link}>
+                    <Button href={project.link} target="_blank">
                       View Live <FiArrowUpRight style={{ marginLeft: "8px" }} />
                     </Button>
                   )}
