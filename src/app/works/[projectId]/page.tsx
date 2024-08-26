@@ -183,7 +183,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
             </Button>
           </div> */}
           </div>
-          <DynamicContact />
+          {/* <DynamicContact /> */}
         </div>
       </Stairs>
     </>
