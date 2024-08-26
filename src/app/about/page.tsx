@@ -232,7 +232,7 @@ export default function About() {
         </div>
 
         {/* Contact */}
-        <DynamicContact />
+        {/* <DynamicContact /> */}
       </Stairs>
     </>
   );
