@@ -26,7 +26,7 @@ export default function Works() {
           <AnimatedDiv animationType="fadeInUp">
             <TabsAndContent projects={projects} />
           </AnimatedDiv>
-          {/* <DynamicContact /> */}
+          <DynamicContact />
         </div>
       </Stairs>
     </>

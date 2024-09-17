@@ -114,7 +114,7 @@ export default function Home() {
           </div>
 
           {/* Contact */}
-          {/* <DynamicContact /> */}
+          <DynamicContact />
         </main>
       </Stairs>
     </>

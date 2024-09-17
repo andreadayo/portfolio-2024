@@ -86,6 +86,7 @@ const tabsData = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Works", path: "/works" },
+  { name: "Contact", path: "/contact" },
 ];
 
 const Navbar: React.FC = () => {
