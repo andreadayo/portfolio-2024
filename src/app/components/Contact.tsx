@@ -147,7 +147,7 @@ const Contact: React.FC = () => {
           </AnimatedDiv>
           <AnimatedDiv animationType="popIn">
             <Link
-              href="mailto:andrealouisedayo@gmail.com?subject=Project%20Inquiry"
+              href="mailto:andrea.dayo@bruntwork.co?subject=Project%20Inquiry"
               className={styles.circle}
             >
               <div className={styles.logo}>
