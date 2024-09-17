@@ -70,7 +70,6 @@ export const projects: Project[] = [
     partners: "TomasinoWeb Web Technologies (PY 2023-2024)",
     featured: true,
   },
-  /*
   {
     id: "portfolio-2",
     type: "website",
@@ -79,7 +78,7 @@ export const projects: Project[] = [
     link: "https://andreadayo-ver2.netlify.app",
     year: "July 2023",
     description:
-      "This is the second portfolio website I developed which features a single page with various sections containing information about myself and the projects I have developed or contributed to. This portfolio helped me secure my first internship as a UI/UX Designer Trainee.",
+      "This is the second portfolio website I developed which features a single page with various sections containing information about myself, the projects I have developed or contributed to, and my contact information for project inquiries. This portfolio helped me secure my first internship as a UI/UX Designer Trainee.",
     tools: [
       "Figma",
       "Next.JS",
@@ -91,7 +90,6 @@ export const projects: Project[] = [
     services: ["UI/UX", "Front-end"],
     palette: ["#E4C443", "#F0F1F5", "#BFC6D4", "#212631", "#0A0E15"],
   },
-  */
   {
     id: "tomasinoweb",
     type: "website",
