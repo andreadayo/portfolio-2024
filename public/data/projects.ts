@@ -18,6 +18,37 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "totodo",
+    type: "design",
+    title: "Totodo",
+    subtitle: "Task management app",
+    figma:
+      "https://www.figma.com/proto/IcWPBxN3i5OXuCSCqvWTdb/Totodo-App?page-id=0%3A1&node-id=78-415&node-type=canvas&viewport=446%2C-130%2C0.03&t=mayhfAWGBjWDbY0u-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=78%3A415&show-proto-sidebar=1",
+    year: "September 2024",
+    description:
+      "Totodo is a simple task management app that was designed and developed for the 3-Part Online Crash Course hosted by TomasinoWeb. The app was created to help participants manage their tasks and deadlines effectively. I contributed to this project as a UI/UX designer.",
+    tools: ["Figma", "Next.JS", "Typescript", "SCSS"],
+    services: ["UI/UX", "Front-end", "Back-end"],
+    palette: ["#FDE047", "#F9A8D4", "#F8FAFC", "#475569", "#0F172A"],
+    partners: "TomasinoWeb Web Technologies (PY 2024-2025)",
+  },
+  {
+    id: "r101-17",
+    type: "website",
+    title: "R101 '17",
+    subtitle: "TomasinoWeb's Recruitment website for 2024",
+    github: "https://github.com/TomasinoWeb/tomasinoWebR101",
+    link: "https://join.tomasinoweb.org",
+    year: "September 2024",
+    description:
+      "This is the recruitment website of TomasinoWeb, where applicants can learn more about the organization’s departments, people, and culture. The design of the website was inspired by Studio Ghibli, incorporating the movies to signify each department throughout the pages. I contributed to this project as a UI/UX designer and front-end developer.",
+    tools: ["Figma", "Next.JS", "Typescript", "SCSS"],
+    services: ["UI/UX", "Front-end"],
+    palette: ["#D35C5F", "#BAA357", "#392B42", "#38504A", "#343332"],
+    partners: "TomasinoWeb Web Technologies (PY 2024-2025)",
+    featured: true,
+  },
+  {
     id: "marita-salon",
     type: "website",
     title: "Marita Salon",
@@ -55,10 +86,10 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: "r101",
+    id: "r101-16",
     type: "website",
     title: "R101 '16",
-    subtitle: "Recruitment website for TomasinoWeb",
+    subtitle: "TomasinoWeb's Recruitment website for 2023",
     github: "https://github.com/TomasinoWeb/tomasinoWebR101",
     link: "https://join.tomasinoweb.org",
     year: "September 2023",
@@ -68,7 +99,6 @@ export const projects: Project[] = [
     services: ["UI/UX", "Front-end"],
     palette: ["#A44955", "#FDDAA6", "#FFFFFF", "#D0CBC6", "#393939"],
     partners: "TomasinoWeb Web Technologies (PY 2023-2024)",
-    featured: true,
   },
   {
     id: "portfolio-2",

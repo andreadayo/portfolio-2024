@@ -11,6 +11,19 @@ export interface Company {
 
 export const jobsData: Company[] = [
   {
+    company: "BruntWork",
+    roles: [
+      {
+        position: "UI/UX Designer",
+        date: "Sep 2024 – Present",
+        description: [
+          "Redesign client websites to improve the interface and user experience.",
+          "Review websites and create user journey maps to identify areas for improvement.",
+        ],
+      },
+    ],
+  },
+  {
     company: "TomasinoWeb",
     roles: [
       {
