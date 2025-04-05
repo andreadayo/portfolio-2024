@@ -67,12 +67,13 @@
       }
 
       @media screen and (max-width: 640px) {
-        pointer-events: auto;
-
         .heroText {
           font-size: var(--h4);
         }
       }
+    }
+    @media screen and (max-width: 1024px) {
+      pointer-events: auto;
     }
   }
 }

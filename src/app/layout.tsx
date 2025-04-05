@@ -27,21 +27,23 @@ export default function RootLayout({
       </head>
       <body>
         <Navbar />
-        <AnimatedCursor
-          innerSize={8}
-          outerSize={35}
-          innerScale={1}
-          outerScale={2}
-          outerAlpha={0}
-          innerStyle={{
-            backgroundColor: "var(--white)",
-            mixBlendMode: "exclusion",
-          }}
-          outerStyle={{
-            border: "3px solid var(--white)",
-            mixBlendMode: "exclusion",
-          }}
-        />
+        {typeof window !== "undefined" && window.innerWidth >= 1024 && (
+          <AnimatedCursor
+            innerSize={8}
+            outerSize={35}
+            innerScale={1}
+            outerScale={2}
+            outerAlpha={0}
+            innerStyle={{
+              backgroundColor: "var(--white)",
+              mixBlendMode: "exclusion",
+            }}
+            outerStyle={{
+              border: "3px solid var(--white)",
+              mixBlendMode: "exclusion",
+            }}
+          />
+        )}
         <PageTransition>{children}</PageTransition>
       </body>
     </html>
