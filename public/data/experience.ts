@@ -1,7 +1,7 @@
 export interface Role {
   position: string;
   date: string;
-  description: string[];
+  description?: string[];
 }
 
 export interface Company {
@@ -11,15 +11,11 @@ export interface Company {
 
 export const jobsData: Company[] = [
   {
-    company: "BruntWork",
+    company: "White Widget",
     roles: [
       {
-        position: "UI/UX Designer",
-        date: "Sep 2024 – Present",
-        description: [
-          "Redesign client websites to improve the interface and user experience.",
-          "Review websites and create user journey maps to identify areas for improvement.",
-        ],
+        position: "Software Engineering Intern",
+        date: "Apr 2025 – Present",
       },
     ],
   },
@@ -63,6 +59,33 @@ export const jobsData: Company[] = [
           "Designed blog sites and landing pages tailored to client specifications.",
           "Utilized design tools like Photoshop and Figma to create high-fidelity prototypes.",
           "Collaborated with clients to understand their needs and deliver custom design solutions.",
+        ],
+      },
+    ],
+  },
+  {
+    company: "Globe Telecom",
+    roles: [
+      {
+        position: "Service Quality Assurance Intern",
+        date: "Dec 2024 – Mar 2025",
+        description: [
+          "Streamlined workflows through automation using tools like Google AppScript, AppSheet, and Colab",
+          "Built and trained AI models to support predictive analysis and decision-making",
+          "Automated geospatial data analysis workflows using QGIS with Python to support data-driven solutions",
+        ],
+      },
+    ],
+  },
+  {
+    company: "BruntWork",
+    roles: [
+      {
+        position: "UI/UX Designer",
+        date: "Sep 2024 – Mar 2025",
+        description: [
+          "Redesign client websites to improve the interface and user experience.",
+          "Review websites and create user journey maps to identify areas for improvement.",
         ],
       },
     ],

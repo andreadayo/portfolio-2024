@@ -18,6 +18,21 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "thomscore",
+    type: "website",
+    title: "ThomScore",
+    subtitle: "UST Teams Scoreboard Archive",
+    link: "https://uaap.tomasinoweb.org",
+    year: "February 2025",
+    description:
+      "ThomScore is the ultimate scoreboard archive of UST's competing sports athletes. It contains the latest scoreboard updates, game information, and schedules tailored for the whole Thomasian community. I contributed to this project as the co-project head and as a UI/UX designer.",
+    tools: ["Figma", "Next.JS", "Typescript", "SCSS", "Framer Motion"],
+    services: ["UI/UX", "Front-end", "Back-end"],
+    palette: ["#FFBA21", "#000000", "#1D1D1D", "#3C3C3C", "#F5F5F5"],
+    partners: "TomasinoWeb Web Technologies (PY 2024-2025)",
+    featured: true,
+  },
+  {
     id: "totodo",
     type: "design",
     title: "Totodo",

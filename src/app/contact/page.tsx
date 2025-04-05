@@ -73,7 +73,7 @@ const Contact: React.FC = () => {
             </AnimatedDiv>
             <AnimatedDiv animationType="popIn">
               <Link
-                href="mailto:andrea.dayo@bruntwork.co?subject=Project%20Inquiry"
+                href="mailto:andrealouisedayo@gmail.com?subject=Project%20Inquiry"
                 className={styles.circle}
               >
                 <div className={styles.logo}>
@@ -85,7 +85,7 @@ const Contact: React.FC = () => {
           </div>
 
           <div className={styles.footer}>
-            <p className={styles.text}>© 2024 All rights reserved.</p>
+            <p className={styles.text}>© 2025 All rights reserved.</p>
           </div>
         </div>
       </Stairs>

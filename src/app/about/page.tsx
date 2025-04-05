@@ -128,7 +128,7 @@ export default function About() {
                       <div className={styles.right}>
                         <h1 className={styles.position}>{role.position}</h1>
                         <ul className={styles.description}>
-                          {role.description.map(
+                          {role.description?.map(
                             (desc: string, dIdx: number) => (
                               <li key={dIdx}>{desc}</li>
                             )
