@@ -23,11 +23,6 @@ const icons = [
     link: "https://www.linkedin.com/in/andreadayo/",
   },
   {
-    icon: <PiReadCvLogo className={styles.icon} />,
-    key: "readcv",
-    link: "https://read.cv/andreadayo",
-  },
-  {
     icon: <FaInstagram className={styles.icon} />,
     key: "instagram",
     link: "https://www.instagram.com/andreadayo_/",
